@@ -1,0 +1,33 @@
+{
+  "name": "design-review",
+  "version": "1.0.2",
+  "description": "Install the SEEK Design Review skill for Claude Code",
+  "bin": {
+    "design-review": "./bin/cli.js"
+  },
+  "files": [
+    "bin",
+    "templates"
+  ],
+  "keywords": [
+    "claude",
+    "claude-code",
+    "skill",
+    "design-review",
+    "seek",
+    "design-audit",
+    "accessibility",
+    "braid",
+    "wcag"
+  ],
+  "author": "Richard Simms <richard@rsimms.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/richardsimms/design-review.git"
+  },
+  "homepage": "https://design-review-skill.vercel.app",
+  "bugs": {
+    "url": "https://github.com/richardsimms/design-review/issues"
+  }
+}
