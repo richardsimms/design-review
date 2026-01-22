@@ -1,6 +1,6 @@
 {
   "name": "design-review",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Install the SEEK Design Review skill for Claude Code",
   "bin": {
     "design-review": "./bin/cli.js"
