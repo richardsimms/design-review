@@ -12,6 +12,10 @@ jobs:
   zip-templates:
     runs-on: ubuntu-latest
 
+    # Grant write permissions to push changes
+    permissions:
+      contents: write
+
     # Skip if commit was made by github-actions bot to avoid infinite loop
     if: github.actor != 'github-actions[bot]'
 
