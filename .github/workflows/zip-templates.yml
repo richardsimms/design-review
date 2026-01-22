@@ -1,0 +1,50 @@
+name: Zip Templates Directory
+
+on:
+  push:
+    branches:
+      - '**'
+    paths:
+      - 'templates/**'
+      - '.github/workflows/zip-templates.yml'
+
+jobs:
+  zip-templates:
+    runs-on: ubuntu-latest
+
+    # Grant write permissions to push changes
+    permissions:
+      contents: write
+
+    # Skip if commit was made by github-actions bot to avoid infinite loop
+    if: github.actor != 'github-actions[bot]'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create zip file from templates directory
+        run: |
+          # Remove old zip if it exists
+          rm -f seek-design-audit.zip
+
+          # Create new zip file
+          cd templates
+          zip -r ../seek-design-audit.zip .
+          cd ..
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          git diff --quiet seek-design-audit.zip || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push updated zip file
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add seek-design-audit.zip
+          git commit -m "Update seek-design-audit.zip [skip ci]"
+          git push
