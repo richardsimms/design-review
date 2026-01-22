@@ -1,6 +1,6 @@
 # /design-review
 
-A comprehensive Claude skill that audits designs and codebases against [SEEK Design Principles](https://myseek.atlassian.net/wiki/spaces/DP1/overview), the [Quality Framework](https://myseek.atlassian.net/wiki/spaces/ADT/pages/3740336187/Definition+of+Design+Quality+at+SEEK), Braid design system compliance, and WCAG AA accessibility standards.
+A comprehensive Claude skill that audits designs and codebases against [SEEK Design Principles](https://myseek.atlassian.net/wiki/spaces/DP1/overview), the [Quality Framework](https://myseek.atlassian.net/wiki/spaces/ADT/pages/3740336187/Definition+of+Design+Quality+at+SEEK), design system compliance, and WCAG AA accessibility standards.
 
 Supports visual design reviews, codebase audits, and market-specific evaluations across APAC regions.
 
@@ -58,14 +58,14 @@ Review visual design, mockup, or Figma screenshot against SEEK frameworks.
 /design-review src/components/
 ```
 
-Audit codebase for Braid compliance, accessibility, and implementation quality.
+Audit codebase for design system compliance, accessibility, and implementation quality.
 
 ### Three-Step Workflow
 
 | Step | What Happens |
 |------|--------------|
 | **1. Context Gathering** | Identifies market (AU/NZ/ID/TH/HK/SG/PH/MY), language, platform, and audience |
-| **2. Comprehensive Audit** | Evaluates against Design Principles, Quality Framework, Braid, and WCAG AA |
+| **2. Comprehensive Audit** | Evaluates against Design Principles, Quality Framework, design system compliance, and WCAG AA |
 | **3. Structured Reporting** | Delivers prioritised recommendations (Critical → Important → Opportunity) |
 
 ---
@@ -78,7 +78,7 @@ This skill audits your designs and code through SEEK's design standards:
 |-----------|-------|--------|
 | **Design Principles** | Maximise the Experience, Bring the Marketplace to Life | Primary |
 | **Quality Framework** | 5 pillars of craft excellence | Secondary |
-| **Braid Compliance** | 80/20 component usage rule | Technical |
+| **Design System Compliance** | 80/20 component usage rule | Technical |
 | **Accessibility** | WCAG AA standards | Non-negotiable |
 
 ### Key Feature: Context-Aware Evaluation
@@ -136,7 +136,7 @@ Create a vibrant, energetic marketplace by emphasising presence and activity.
 | **Complex Made Simple** | Reduce cognitive load, streamline decisions, eliminate friction, context-aware interfaces |
 | **Beautifully Crafted** | Visual hierarchy, responsive design, functional visuals, micro-interactions |
 | **Purposefully Innovative** | Original concepts balanced with usability, cutting-edge tech with purpose |
-| **Cohesive at Every Touchpoint** | Braid design system (80/20 rule), cross-platform consistency, SEEK Writing Style Guide |
+| **Cohesive at Every Touchpoint** | Design system compliance (80/20 rule), cross-platform consistency, SEEK Writing Style Guide |
 | **Embrace Diversity** | WCAG AA compliance, cultural sensitivity, inclusive representation, readability |
 
 ---
@@ -157,7 +157,7 @@ Platform: Web (Desktop) | Audience: Candidate
 
 OVERALL ASSESSMENT
 ───────────────────
-Strong visual hierarchy and effective use of Braid components.
+Strong visual hierarchy and effective use of design system components.
 Missing real-time marketplace indicators and some accessibility
 improvements needed for WCAG AA compliance.
 
@@ -175,14 +175,14 @@ QUALITY FRAMEWORK
 ✓ Complex Made Simple — Clear progressive disclosure
 ✓ Beautifully Crafted — Strong visual hierarchy
 💡 Purposefully Innovative — Consider dynamic content patterns
-✗ Cohesive at Every Touchpoint — Custom spacing overrides Braid
+✗ Cohesive at Every Touchpoint — Custom spacing overrides design system
 ✗ Embrace Diversity — Contrast ratio 3.2:1 below 4.5:1 minimum
 
-BRAID COMPLIANCE
+DESIGN SYSTEM COMPLIANCE
 ───────────────────
-✓ Using Stack, Columns, Text components correctly
-✗ Custom button styling instead of Braid Button
-💡 Consider Braid Dialog for modal patterns
+✓ Using layout and typography components correctly
+✗ Custom button styling instead of design system components
+💡 Consider system Dialog component for modal patterns
 
 WCAG AA ACCESSIBILITY
 ───────────────────
@@ -214,7 +214,7 @@ seek-design-audit/
 └── references/
     ├── design-principles.md              # Maximise + Marketplace evaluation criteria
     ├── quality-framework.md              # 5 pillars with detailed tactics
-    ├── braid-checklist.md                # Component & token compliance checks
+    ├── design-system-checklist.md        # Component & token compliance checks
     ├── accessibility.md                  # WCAG AA requirements
     └── market-considerations.md          # APAC market-specific guidance
 ```
@@ -236,7 +236,6 @@ Works with:
 
 - **Website**: [design-review-skill.vercel.app](https://design-review-skill.vercel.app)
 - **LLM.txt**: [design-review-skill.vercel.app/llm.txt](https://design-review-skill.vercel.app/llm.txt)
-- **Braid Design System**: [seek-oss.github.io/braid-design-system](https://seek-oss.github.io/braid-design-system/)
 - **Claude Skills Documentation**: [docs.anthropic.com](https://docs.anthropic.com/en/docs/claude-code)
 
 ---
@@ -246,7 +245,6 @@ Works with:
 This skill codifies design standards from:
 - **SEEK Design Principles** — Maximise the Experience, Bring the Marketplace to Life
 - **SEEK Quality Framework** — Complex Made Simple, Beautifully Crafted, Purposefully Innovative, Cohesive at Every Touchpoint, Embrace Diversity
-- **Braid Design System** — SEEK's open-source design system
 
 ---
 

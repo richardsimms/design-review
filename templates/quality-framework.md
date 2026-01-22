@@ -140,15 +140,15 @@
 
 > "Consistency is the foundation of virtue." — Francis de Sales
 
-**Core idea**: Leverage existing design systems and guides for familiar, intuitive design. 80% Braid, 20% custom patterns.
+**Core idea**: Leverage existing design systems and guides for familiar, intuitive design. 80% design system components, 20% custom patterns.
 
 ### Tactics to Evaluate
 
 **Design system compliance**
-- ✓ 80%+ Braid components used
+- ✓ 80%+ design system components used
 - ✓ Custom patterns documented and justified
 - ✓ Consistent component usage across product
-- ✗ Rebuilding what Braid provides
+- ✗ Rebuilding what design system provides
 - ✗ Inconsistent component variations
 - ✗ Undocumented custom patterns
 

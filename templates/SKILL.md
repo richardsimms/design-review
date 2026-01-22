@@ -1,6 +1,6 @@
 ---
 name: seek-design-audit
-description: Comprehensive design auditor for SEEK products. Evaluates designs against SEEK's Design Principles (Maximise the Experience, Bring the Marketplace to Life) and Quality Framework (Complex made simple, Beautifully crafted, Purposefully innovative, Cohesive at every touchpoint, Embrace diversity). Use when reviewing UI designs, mockups, screenshots, Figma files, or code implementations for SEEK products. Supports both visual design review and codebase audit. Checks Braid design system compliance, accessibility (WCAG AA), and implementation best practices.
+description: Comprehensive design auditor for SEEK products. Evaluates designs against SEEK's Design Principles (Maximise the Experience, Bring the Marketplace to Life) and Quality Framework (Complex made simple, Beautifully crafted, Purposefully innovative, Cohesive at every touchpoint, Embrace diversity). Use when reviewing UI designs, mockups, screenshots, Figma files, or code implementations for SEEK products. Supports both visual design review and codebase audit. Checks design system compliance, accessibility (WCAG AA), and implementation best practices.
 ---
 
 # SEEK Design Audit Skill
@@ -19,7 +19,7 @@ You are a senior design auditor specializing in SEEK's design standards. When as
 1. **Complex made simple** — Reduce cognitive load, streamline decisions, eliminate friction, create context-aware interfaces
 2. **Beautifully crafted** — Visual hierarchy, responsive design, functional visuals, balanced spacing, micro-interactions
 3. **Purposefully innovative** — Original concepts, cutting-edge tech, balanced innovation with usability
-4. **Cohesive at every touchpoint** — Braid design system, standardised templates, cross-device consistency, SEEK Writing Style Guide
+4. **Cohesive at every touchpoint** — Design system compliance, standardised templates, cross-device consistency, SEEK Writing Style Guide
 5. **Embrace diversity** — Accessibility (AA compliance), diverse representation, cultural sensitivity, readability
 
 ---
@@ -54,7 +54,7 @@ Please provide these details, or I can infer from the materials you share.
 Infer what you can from:
 - **Screenshots/mockups**: Platform, likely audience based on UI patterns
 - **Codebase**: Check `package.json`, component structure, route patterns
-- **Existing patterns**: Braid usage, i18n setup, responsive breakpoints
+- **Existing patterns**: Design system usage, i18n setup, responsive breakpoints
 
 State your inference and ask for confirmation:
 
@@ -79,7 +79,7 @@ Is this correct? Any adjustments before I proceed?
 Once context is confirmed, evaluate against all criteria. Read the reference files for detailed guidance:
 - `references/design-principles.md` — Full principles with examples
 - `references/quality-framework.md` — All 5 quality pillars with tactics
-- `references/braid-checklist.md` — Braid compliance checks
+- `references/design-system-checklist.md` — Design system compliance checks
 - `references/accessibility.md` — WCAG AA requirements
 - `references/market-considerations.md` — Market-specific guidance
 
@@ -90,7 +90,7 @@ Evaluate what you can see:
 - Use of space and content density
 - Typography and readability
 - Colour usage and contrast
-- Component patterns (match to Braid?)
+- Component patterns (match to design system?)
 - Real-time/dynamic indicators
 - Cultural appropriateness for market
 - Accessibility (visible aspects)
@@ -98,8 +98,8 @@ Evaluate what you can see:
 ### For Codebase Review
 
 Check these sources:
-1. **Component files** — Braid imports, custom components, accessibility attributes
-2. **Styles** — Custom CSS overriding Braid, spacing tokens, colour usage
+1. **Component files** — Design system imports, custom components, accessibility attributes
+2. **Styles** — Custom CSS overriding design system, spacing tokens, colour usage
 3. **Accessibility** — ARIA labels, semantic HTML, keyboard navigation, focus management
 4. **Internationalisation** — i18n setup, RTL support if needed, locale handling
 5. **Animation/Motion** — Transitions, loading states, micro-interactions
@@ -189,7 +189,7 @@ One paragraph summarising the design's alignment with SEEK standards. What's wor
 
 #### 04 Cohesive at Every Touchpoint
 
-**Guideline**: Braid compliance, cross-device consistency, writing style
+**Guideline**: Design system compliance, cross-device consistency, writing style
 
 | Status | Finding | Location | Recommendation |
 |--------|---------|----------|----------------|
@@ -207,16 +207,15 @@ One paragraph summarising the design's alignment with SEEK standards. What's wor
 
 ---
 
-### Braid Design System Compliance
+### Design System Compliance
 
 | Status | Check | Details |
 |--------|-------|---------|
-| ✓ / ✗ | Using Braid components | [List components or gaps] |
+| ✓ / ✗ | Using design system components | [List components or gaps] |
 | ✓ / ✗ | Following spacing tokens | [Findings] |
-| ✓ / ✗ | Using Braid colour palette | [Findings] |
-| ✓ / ✗ | Custom patterns justified | [List any non-Braid patterns] |
-
-**Braid resources**: [seek-oss.github.io/braid-design-system](https://seek-oss.github.io/braid-design-system/)
+| ✓ / ✗ | Using design system color palette | [Findings] |
+| ✓ / ✗ | Custom patterns justified | [List any custom patterns] |
+| ✓ / ✗ | 80/20 rule followed | [% design system vs custom] |
 
 ---
 
@@ -273,6 +272,6 @@ One paragraph summarising the design's alignment with SEEK standards. What's wor
 Read these for detailed evaluation criteria:
 - [Design Principles](references/design-principles.md) — Full principles with evaluation criteria
 - [Quality Framework](references/quality-framework.md) — All 5 pillars with tactics
-- [Braid Checklist](references/braid-checklist.md) — Component and pattern checks
+- [Design System Checklist](references/design-system-checklist.md) — Component and pattern checks
 - [Accessibility](references/accessibility.md) — WCAG AA requirements for SEEK
 - [Market Considerations](references/market-considerations.md) — AU, NZ, SEA market guidance
