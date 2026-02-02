@@ -1,46 +1,87 @@
 # /design-review
 
-A comprehensive Claude skill that audits designs and codebases against [SEEK Design Principles](https://myseek.atlassian.net/wiki/spaces/DP1/overview), the [Quality Framework](https://myseek.atlassian.net/wiki/spaces/ADT/pages/3740336187/Definition+of+Design+Quality+at+SEEK), Braid design system compliance, and WCAG AA accessibility standards.
+A comprehensive design audit agent for **Claude Code**, **Cursor**, and **Codex** that evaluates designs and codebases against [SEEK Design Principles](https://myseek.atlassian.net/wiki/spaces/DP1/overview), the [Quality Framework](https://myseek.atlassian.net/wiki/spaces/ADT/pages/3740336187/Definition+of+Design+Quality+at+SEEK), Braid design system compliance, and WCAG AA accessibility standards.
 
 Supports visual design reviews, codebase audits, and market-specific evaluations across APAC regions.
 
-**Website**: [design-review-skill.vercel.app](https://design-review-skill.vercel.app)
+**Website**: [www.designreview.cc](https://www.designreview.cc)
 
 ---
 
 ## Installation
 
-### For Claude Code
+### Interactive Installer (Recommended)
 
 ```bash
 npx design-review
 ```
 
-Installs the skill to your Claude Code skills directory. Requires [Claude Code CLI](https://docs.anthropic.com/en/docs/claude-code).
+Interactive menu lets you choose:
+- **Claude Code** only (`.claude/skills/design-review/`)
+- **Cursor** only (`.cursorrules`)
+- **Codex** only (`AGENTS.md` - project or global)
+- **All platforms** (install to all three)
 
-### Manual Installation
+---
 
-**Global (all projects):**
+### Platform-Specific Instructions
+
+#### Claude Code
+
+The interactive installer will create `.claude/skills/design-review/` with the full skill and reference files.
+
+**Manual Installation:**
 
 ```bash
+# Global (all projects)
 unzip seek-design-audit.zip -d ~/.claude/skills/
-```
 
-**Project-level:**
-
-```bash
+# Project-level
 unzip seek-design-audit.zip -d .claude/skills/
 ```
 
-### For Claude.ai
-
+**For Claude.ai:**
 1. Go to **Settings → Features**
 2. Download [`seek-design-audit.zip`](https://github.com/richardsimms/design-review/releases/latest)
-3. Drag and drop the `.zip` file into the skill upload dialog
+3. Drag and drop into the skill upload dialog
+
+#### Cursor
+
+The interactive installer will create `.cursorrules` in your project root.
+
+**Manual Installation:**
+
+```bash
+# Copy the template to your project
+cp node_modules/design-review/templates-cursor/.cursorrules .cursorrules
+```
+
+⚠️ **Warning**: If you already have a `.cursorrules` file, the installer will abort to prevent overwriting. Backup your existing file first.
+
+#### Codex
+
+The interactive installer will create `AGENTS.md` at your chosen location:
+- **Project-level**: `./AGENTS.md`
+- **Global**: `~/.codex/AGENTS.md`
+
+If `AGENTS.md` already exists, the design review section will be appended with a separator.
+
+**Manual Installation:**
+
+```bash
+# Project-level
+cp node_modules/design-review/templates-codex/AGENTS.md ./AGENTS.md
+
+# Global
+mkdir -p ~/.codex
+cp node_modules/design-review/templates-codex/AGENTS.md ~/.codex/AGENTS.md
+```
 
 ---
 
 ## Usage
+
+### Claude Code
 
 ```
 /design-review
@@ -59,6 +100,30 @@ Review visual design, mockup, or Figma screenshot against SEEK frameworks.
 ```
 
 Audit codebase for Braid compliance, accessibility, and implementation quality.
+
+### Cursor
+
+Cursor will automatically read `.cursorrules` when you interact with it. Simply ask:
+
+```
+Audit this design against SEEK standards
+```
+
+```
+Review src/ for Braid compliance and accessibility issues
+```
+
+### Codex
+
+Codex will automatically read `AGENTS.md` from your project or `~/.codex/`. Ask:
+
+```
+Perform a design audit on this screenshot
+```
+
+```
+Audit the codebase for SEEK design compliance
+```
 
 ### Three-Step Workflow
 
@@ -209,35 +274,47 @@ PRIORITISED RECOMMENDATIONS
 ## What's Included
 
 ```
-seek-design-audit/
-├── SKILL.md                              # Main skill with workflow
-└── references/
-    ├── design-principles.md              # Maximise + Marketplace evaluation criteria
-    ├── quality-framework.md              # 5 pillars with detailed tactics
-    ├── braid-checklist.md                # Component & token compliance checks
-    ├── accessibility.md                  # WCAG AA requirements
-    └── market-considerations.md          # APAC market-specific guidance
+design-review/
+├── templates/                            # Claude Code (modular)
+│   ├── SKILL.md                         # Main skill with workflow
+│   └── references/
+│       ├── design-principles.md         # Maximise + Marketplace evaluation
+│       ├── quality-framework.md         # 5 pillars with detailed tactics
+│       ├── braid-checklist.md           # Component & token compliance
+│       ├── accessibility.md             # WCAG AA requirements
+│       └── market-considerations.md     # APAC market-specific guidance
+│
+├── templates-cursor/                     # Cursor (single file)
+│   └── .cursorrules                     # Condensed design audit rules
+│
+└── templates-codex/                      # Codex (AGENTS.md format)
+    └── AGENTS.md                        # Design audit agent instructions
 ```
 
 ---
 
 ## Compatibility
 
-Works with:
-- [Claude Code](https://docs.anthropic.com/en/docs/claude-code)
-- [Claude.ai](https://claude.ai)
-- [Cursor](https://cursor.com)
-- [OpenCode](https://opencode.ai)
+**Officially Supported:**
+- [Claude Code](https://docs.anthropic.com/en/docs/claude-code) — Full skill with modular references
+- [Cursor](https://cursor.com) — Condensed `.cursorrules` format
+- [Codex](https://openai.com/codex) — `AGENTS.md` format
+
+**Also Works With:**
+- [Claude.ai](https://claude.ai) — Skill upload via zip file
+- [OpenCode](https://opencode.ai) — Claude Code compatible
 - Any MCP-compatible coding agent
 
 ---
 
 ## Resources
 
-- **Website**: [design-review-skill.vercel.app](https://design-review-skill.vercel.app)
-- **LLM.txt**: [design-review-skill.vercel.app/llm.txt](https://design-review-skill.vercel.app/llm.txt)
+- **Website**: [www.designreview.cc](https://www.designreview.cc)
+- **LLM.txt**: [www.designreview.cc/llm.txt](https://www.designreview.cc/llm.txt)
 - **Braid Design System**: [seek-oss.github.io/braid-design-system](https://seek-oss.github.io/braid-design-system/)
-- **Claude Skills Documentation**: [docs.anthropic.com](https://docs.anthropic.com/en/docs/claude-code)
+- **Claude Code Documentation**: [docs.anthropic.com](https://docs.anthropic.com/en/docs/claude-code)
+- **Cursor Documentation**: [docs.cursor.com](https://docs.cursor.com)
+- **Codex CLI Documentation**: [github.com/openai/codex](https://github.com/openai/codex)
 
 ---
 
